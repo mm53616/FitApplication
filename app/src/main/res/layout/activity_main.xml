@@ -21,7 +21,7 @@
     <Button
         style="@style/ButtonStyle"
         android:background="@color/ButtonColor"
-        android:text="Train alone"
+        android:text="Train forever alone"
         android:onClick="openTraining"/>
 
     <Button
