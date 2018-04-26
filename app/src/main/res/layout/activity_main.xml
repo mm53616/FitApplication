@@ -27,7 +27,8 @@
     <Button
         style="@style/ButtonStyle"
         android:background="@color/ButtonColor"
-        android:text="Result" />
+        android:text="Result"
+        android:onClick="Ok"/>
 
     <Button
         style="@style/ButtonStyle"

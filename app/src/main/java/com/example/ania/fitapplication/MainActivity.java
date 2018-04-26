@@ -18,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void Ok(View view){
+        Intent i = new Intent(this, Exercises.class);
+        startActivity(i);
+    }
+
+
+
     public void Exit(View view){
         finish();
     }

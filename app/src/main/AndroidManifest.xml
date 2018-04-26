@@ -16,10 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TrainAlone" />
-        <activity android:name=".Results" />
-        <activity android:name=".Exercise" />
-        <activity android:name=".Exercises"></activity>
+        <activity android:name=".TrainAlone"
+            android:label="Training"/>
+        <activity android:name=".Results"
+            android:label="Results"/>
+        <activity android:name=".Exercise"
+            android:label="Exercise!"/>
+        <activity android:name=".Exercises"
+            android:label="Exercises">
+
+        </activity>
     </application>
 
 </manifest>
