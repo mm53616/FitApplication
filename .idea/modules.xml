@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FitApplication.iml" filepath="$PROJECT_DIR$/.idea/FitApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FitApplication.iml" filepath="$PROJECT_DIR$/FitApplication.iml" />
       <module fileurl="file://C:\Users\Ania\Desktop\FitApplication\FitApplication.iml" filepath="C:\Users\Ania\Desktop\FitApplication\FitApplication.iml" />
+      <module fileurl="file://C:\Android\FitApplication\.idea\FitApplication.iml" filepath="C:\Android\FitApplication\.idea\FitApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
