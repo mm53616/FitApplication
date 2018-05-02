@@ -20,5 +20,10 @@ public class Exercises extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void Back(View view)
+    {
+        finish();
+    }
+
 
 }

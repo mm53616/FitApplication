@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context="com.example.ania.fitapplication.Exercise">
+
+<ImageView
+    android:id="@+id/photo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ania.fitapplication.Results">
+    android:scaleType="centerCrop"
+    android:src="@drawable/pobrane" />
 
-</android.support.constraint.ConstraintLayout>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/resultsButton"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Show results" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your latest results:"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="100dp"/>
+
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Back"
+            android:onClick="Back"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+
+</RelativeLayout>

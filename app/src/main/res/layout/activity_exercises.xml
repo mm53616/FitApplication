@@ -127,22 +127,27 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
                 <Button
                     android:id="@+id/button_go"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="20dp"
+                    style="@style/ButtonStyle"
+                    android:background="@color/ButtonColor"
                     android:onClick="Go"
                     android:text="GO!" />
 
-            </RelativeLayout>
+                <Button
+                    android:id="@+id/button"
+                    style="@style/ButtonStyle"
+                    android:background="@color/ButtonColor"
+                    android:text="Back"
+                    android:onClick="Back"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

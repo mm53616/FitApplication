@@ -31,17 +31,15 @@
             android:weightSum="2">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewOfSport"
             style="@style/TextViewStyleExercise"
-
-            android:text="Running"
+            android:text="Walking"
 
             />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewOfTime"
             style="@style/TextViewStyleExercise"
-
             android:text="120min"/>
 
         </LinearLayout>
@@ -73,7 +71,7 @@
                 android:gravity="center_horizontal" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/saveButton"
                 android:layout_width="0dp"
                 android:layout_marginRight="5dp"
                 android:layout_height="wrap_content"
@@ -93,7 +91,17 @@
             android:layout_margin="20dp"
             />
 
+        <Button
+            android:id="@+id/button3"
+            android:text="Back"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:onClick="Back"/>
+
     </LinearLayout>
+
+
+
 
 
     </ScrollView>

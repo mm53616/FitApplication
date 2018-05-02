@@ -51,5 +51,11 @@ public class TrainAlone extends AppCompatActivity {
 
     }
 
+    public void showExercises(View view)
+    {
+        Intent i = new Intent(this, Exercises.class);
+        startActivity(i);
+    }
+
 }
 
