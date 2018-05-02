@@ -51,7 +51,7 @@
                     app:srcCompat="@drawable/chod" />
 
                 <TextView
-                    style="@style/TextViewStyle"
+                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_walk"
                     android:layout_alignTop="@+id/image_walk"
                     android:ems="10"
@@ -84,7 +84,7 @@
                     app:srcCompat="@drawable/bieg" />
 
                 <TextView
-                    style="@style/TextViewStyle"
+                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_run"
                     android:layout_alignTop="@+id/image_run"
                     android:ems="10"
@@ -117,7 +117,7 @@
                     app:srcCompat="@drawable/rower" />
 
                 <TextView
-                    style="@style/TextViewStyle"
+                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_bike"
                     android:layout_alignTop="@+id/image_bike"
                     android:ems="10"
