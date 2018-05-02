@@ -1,101 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-
-<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.ania.fitapplication.TrainAlone">
 
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pobrane" />
 
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/button_walk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        android:layout_centerVertical="true"
-
-        android:text="Walk" />
-
-
-
-    <ImageButton
-        android:id="@+id/image_walk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
-
-        android:layout_alignTop="@+id/button_walk"
-        app:srcCompat="@drawable/chod" />
+                <Button
+                    android:id="@+id/button_walk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="Walk" />
 
 
+                <ImageButton
+                    android:id="@+id/image_walk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/button_walk"
+                    android:layout_margin="20dp"
+                    app:srcCompat="@drawable/chod" />
 
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/editText_walk"
+                    android:layout_alignTop="@+id/image_walk"
+                    android:ems="10"
+                    android:text="time/calories"  />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_run"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="Run" />
+
+
+                <ImageButton
+                    android:id="@+id/image_run"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="20dp"
+                    app:srcCompat="@drawable/bieg" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/editText_run"
+                    android:layout_alignTop="@+id/image_run"
+                    android:ems="10"
+                    android:text="time/calories" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="10"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_bike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="Bike" />
+
+                <ImageButton
+                    android:id="@+id/image_bike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="20dp"
+                    app:srcCompat="@drawable/rower" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/editText_bike"
+                    android:layout_alignTop="@+id/image_bike"
+                    android:ems="10"
+                    android:text="time/calories"
+                />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/button_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:onClick="Go"
+                    android:text="GO!" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <Button
-        android:id="@+id/button_run"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_centerVertical="true"
-        android:text="Run" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="21dp"
-        app:srcCompat="@drawable/bieg"
-        android:layout_margin="20dp"/>
-
-</RelativeLayout>
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <Button
-        android:id="@+id/button_bike"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_centerVertical="true"
-        android:text="Bike" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/rower"
-        android:layout_margin="20dp"/>
-
-
-
-</RelativeLayout>
-
-</LinearLayout>
-
-</ScrollView>
