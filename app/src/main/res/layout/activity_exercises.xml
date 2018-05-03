@@ -31,31 +31,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/button_walk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:text="Walk" />
-
-
-                <ImageButton
-                    android:id="@+id/image_walk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/button_walk"
-                    android:layout_margin="20dp"
-                    app:srcCompat="@drawable/chod" />
+                <TextView
+                    style="@style/TextViewStyleExercises"
+                    android:id="@+id/editText_walk_time"
+                    android:text="Time: "
+                    android:layout_alignTop="@+id/image_walk"/>
 
                 <TextView
                     style="@style/TextViewStyleExercises"
-                    android:id="@+id/editText_walk"
-                    android:layout_alignTop="@+id/image_walk"
-                    android:ems="10"
-                    android:text="time/calories"  />
+                    android:id="@+id/editText_walk_calories"
+                    android:layout_below="@+id/editText_walk_time"
+                    android:text="Calories: " />
+
+                <Button
+                    android:id="@+id/image_walk"
+                    style="@style/ButtonImageStyle"
+                    android:background="@drawable/chod"
+                    android:text="walk!"
+                   />
 
 
             </RelativeLayout>
@@ -65,30 +58,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/button_run"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:text="Run" />
-
-
-                <ImageButton
-                    android:id="@+id/image_run"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="20dp"
-                    app:srcCompat="@drawable/bieg" />
+                <TextView
+                    style="@style/TextViewStyleExercises"
+                    android:id="@+id/editText_run_time"
+                    android:layout_alignTop="@+id/image_run"
+                    android:text="Time: " />
 
                 <TextView
                     style="@style/TextViewStyleExercises"
-                    android:id="@+id/editText_run"
-                    android:layout_alignTop="@+id/image_run"
-                    android:ems="10"
-                    android:text="time/calories" />
+                    android:id="@+id/editText_run_calories"
+                    android:layout_below="@+id/editText_run_time"
+                    android:text="Calories: " />
+
+
+                <Button
+
+                    android:id="@+id/image_run"
+                    style="@style/ButtonImageStyle"
+                    android:background="@drawable/bieg"
+                    android:text="run!"/>
+
 
 
             </RelativeLayout>
@@ -98,31 +87,26 @@
                 android:layout_weight="10"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/button_bike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:text="Bike" />
-
-                <ImageButton
-                    android:id="@+id/image_bike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_margin="20dp"
-                    app:srcCompat="@drawable/rower" />
+                <TextView
+                    style="@style/TextViewStyleExercises"
+                    android:id="@+id/editText_bike_time"
+                    android:layout_alignTop="@+id/image_bike"
+                    android:text="Time: " />
 
                 <TextView
                     style="@style/TextViewStyleExercises"
-                    android:id="@+id/editText_bike"
-                    android:layout_alignTop="@+id/image_bike"
-                    android:ems="10"
-                    android:text="time/calories"
-                />
+                    android:id="@+id/editText_bike_calories"
+                    android:layout_below="@+id/editText_bike_time"
+                    android:text="Calories: " />
+
+
+                <Button
+                    android:id="@+id/image_bike"
+                    style="@style/ButtonImageStyle"
+                    android:background="@drawable/rower"
+                    android:text="Bike"/>
+
+
 
 
             </RelativeLayout>
