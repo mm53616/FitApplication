@@ -65,7 +65,7 @@
         <Button
         style="@style/ButtonStyle"
         android:background="@color/ButtonColor"
-        android:layout_margin="20dp"
+        android:layout_margin="22dp"
         android:text="Ok"
         android:onClick="Ok"/>
 
@@ -74,13 +74,6 @@
         android:background="@color/ButtonColor"
         android:text="@string/back"
         android:onClick="Back"/>
-
-        <Button
-            android:id="@+id/showResults"
-            style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
-            android:text="Show Exercises"
-            android:onClick="showExercises"/>
 
     </LinearLayout>
     </ScrollView>

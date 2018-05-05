@@ -11,8 +11,10 @@ import android.widget.Toast;
 
 public class TrainAlone extends AppCompatActivity {
 
-    boolean CaloriesChecked;
-    boolean TimeChecked;
+    static boolean CaloriesChecked;
+    static boolean TimeChecked;
+    static int calories;
+    static int time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +52,8 @@ public class TrainAlone extends AppCompatActivity {
 
     public void Ok(View v){
 
-        int calories = 0;
-        int time = 0;
         EditText numberText = (EditText) findViewById(R.id.number_text);
+        Intent i = new Intent(this, Exercises.class);
 
         if(CaloriesChecked == true && TimeChecked == false) {
             try {
@@ -62,6 +63,9 @@ public class TrainAlone extends AppCompatActivity {
             }
             if (calories > 7000 || calories < 100) {
                 Toast.makeText(this, " Change the number of calories", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                startActivity(i);
             }
         }
 
@@ -74,16 +78,20 @@ public class TrainAlone extends AppCompatActivity {
             if(time>200 || time < 10){
                 Toast.makeText(this, " Change the time", Toast.LENGTH_SHORT).show();
             }
+            else{
+                startActivity(i);
+            }
         }
         if((TimeChecked == false && CaloriesChecked == false) || (TimeChecked == true && CaloriesChecked == true)) {
             numberText.setText("");
+            Toast.makeText(this, " First choose an option", Toast.LENGTH_SHORT).show();
         }
-    }
 
-    public void showExercises(View view)
-    {
-        Intent i = new Intent(this, Exercises.class);
-        startActivity(i);
+        if(numberText.getText().toString().matches("") ){
+            calories = 0;
+            time = 0;
+            return;
+        }
     }
 
 }
