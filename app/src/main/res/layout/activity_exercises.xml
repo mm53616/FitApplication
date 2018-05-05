@@ -104,7 +104,8 @@
                     android:id="@+id/image_bike"
                     style="@style/ButtonImageStyle"
                     android:background="@drawable/rower"
-                    android:text="Bike"/>
+                    android:text="Bike"
+                    android:onClick="chosenActivity"/>
 
 
 

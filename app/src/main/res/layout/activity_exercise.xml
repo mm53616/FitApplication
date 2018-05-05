@@ -30,17 +30,16 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-        <TextView
-            android:id="@+id/textViewOfSport"
-            style="@style/TextViewStyleExercise"
-            android:text="Walking"
+            <TextView
+                android:id="@+id/textViewOfSport"
+                style="@style/TextViewStyleExercise"
 
-            />
+                android:text="Walking" />
 
-        <TextView
-            android:id="@+id/textViewOfTime"
-            style="@style/TextViewStyleExercise"
-            android:text="120min"/>
+            <TextView
+                android:id="@+id/textViewOfCalories"
+                style="@style/TextViewStyleExercise"
+                android:text="120 kcal" />
 
         </LinearLayout>
 
@@ -81,15 +80,20 @@
 
         </LinearLayout>
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <com.example.ania.fitapplication.GifImageView
             android:id="@+id/GifImageView"
-            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_weight="5"
-            android:scaleType="center"
             android:layout_margin="20dp"
             />
+        </RelativeLayout>
+
 
         <Button
             android:id="@+id/button3"

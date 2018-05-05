@@ -4,33 +4,87 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
 public class Exercises extends AppCompatActivity {
 
-    int walkTime;
-    int runtTime;
-    int bikeTime;
-    int walkCalories;
-    int runCalories;
-    int bikeCalories;
+    static int walkTime;
+    static int runtTime;
+    static int bikeTime;
+    static int walkCalories;
+    static int runCalories;
+    static int bikeCalories;
+
+//    static String a="hhhhhhhhh";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercises);
 
-        TextView WalkTime = (TextView) findViewById(R.id.editText_walk_time);
-        TextView WalkCalories = (TextView) findViewById(R.id.editText_walk_calories);
-        TextView RunTime = (TextView) findViewById(R.id.editText_run_time);
-        TextView RunCalories = (TextView) findViewById(R.id.editText_run_calories);
-        TextView BikTime = (TextView) findViewById(R.id.editText_bike_time);
-        TextView BikeCalories = (TextView) findViewById(R.id.editText_bike_calories);
+      final TextView WalkTime = (TextView) findViewById(R.id.editText_walk_time);
+      final   TextView WalkCalories = (TextView) findViewById(R.id.editText_walk_calories);
+        final TextView RunTime = (TextView) findViewById(R.id.editText_run_time);
+        final TextView RunCalories = (TextView) findViewById(R.id.editText_run_calories);
+        final TextView BikTime = (TextView) findViewById(R.id.editText_bike_time);
+        final TextView BikeCalories = (TextView) findViewById(R.id.editText_bike_calories);
+         Button walkButton = findViewById(R.id.image_walk);
+          Button runButton = findViewById(R.id.image_run);
+         Button bikeButton =  findViewById(R.id.image_bike);
 
+
+//Choosing activity
+
+        walkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+        //      choosingWalking( WalkTime, WalkCalories);
+
+           //     Exercise.sportText.setText("Walking");
+       //         Exercise.caloriesText.setText(WalkCalories.getText());
+      //          Exercise.timeCounterText.setText(WalkTime.getText());;
+               Go( view);
+
+            }
+        });
+
+        runButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            //    choosingRunning();
+
+                Go( view);
+
+
+            }
+        });
+
+        bikeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+   //          choosingBike();
+                Go( view);
+
+
+            }
+        });
+
+
+
+
+//Counting calories and time
         if(TrainAlone.CaloriesChecked == true){
 
             calculateTime(TrainAlone.calories);
+
 
             WalkCalories.setText("Calories:  "+TrainAlone.calories + " kcal");
             RunCalories.setText("Calories:  "+TrainAlone.calories + " kcal");
@@ -56,6 +110,36 @@ public class Exercises extends AppCompatActivity {
     }
 
 
+    //Choosing activity: walking, running, riding a bike
+
+    private void choosingWalking(TextView WalkTime, TextView WalkCalories) {
+
+
+     Exercise.sportText.setText("Walking");
+     Exercise.caloriesText.setText(WalkCalories.getText());
+     Exercise.timeCounterText.setText(WalkTime.getText());
+
+    }
+    /**
+    private void choosingRunning() {
+
+     Exercise.sportText.setText("Running");
+     Exercise.caloriesText.setText(RunCalories.getText());
+     Exercise.timeCounterText.setText(RunTime.getText());
+
+    }
+
+    private void choosingBike() {
+
+     Exercise.sportText.setText("Riding a bike");
+     Exercise.caloriesText.setText(BikeCalories.getText());
+     Exercise.timeCounterText.setText(BikTime.getText());
+
+    }
+
+**/
+
+
 
     public void Go(View view){
         Intent i = new Intent(this, Exercise.class);
@@ -79,4 +163,10 @@ public class Exercises extends AppCompatActivity {
         runCalories = (number*735)/60;
         bikeCalories = (number*550)/60;
     }
+
+
+
+
+
+
 }

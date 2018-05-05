@@ -9,28 +9,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
 
 public class Exercise extends AppCompatActivity {
 
+
+
+
 //Timer variable
-    private TextView timeCounterText;
+    static TextView timeCounterText;
     private Button timeButton;
     private CountDownTimer countDownTimer;
-    private long timeLeft = 600000; //10min
+    private long timeLeft = TrainAlone.time*60000;
     private boolean timeRunning;
 
 //File variable
     private Button saveButton;
-    private TextView sportText;
-    private TextView lengthText;
+    static TextView sportText;
+    static TextView caloriesText;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+
+
+//Labels
+//        sportText.setText(Exercises.a);
 
 //Creating a gif
         com.example.ania.fitapplication.GifImageView gifImageView = findViewById(R.id.GifImageView);
@@ -52,31 +63,24 @@ public class Exercise extends AppCompatActivity {
 //Creating a file
         saveButton = findViewById(R.id.saveButton);
         sportText = findViewById(R.id.textViewOfSport);
-        lengthText = findViewById(R.id.textViewOfTime);
+        caloriesText = findViewById(R.id.textViewOfCalories);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                saveAsFile(sportText, lengthText);
+                if (timeRunning)
+                    startStop();
+                saveAsFile(sportText, caloriesText, timeCounterText );
             }
         });
 
     }
 
 
+
+
 //Methods connected to timer
-private void saveAsFile(TextView sport, TextView timeOfExercise) {
-    try {
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
-        String text = "Sport: "+ sport.getText().toString() +  "\n Burnt calories: 0"  + "\n Time: " + timeOfExercise.getText().toString();
-        outputStreamWriter.write(text);
-        outputStreamWriter.close();
-    }
-    catch (IOException e) {
-        Log.e("Exception", "File write failed: " + e.toString());
-    }
-}
 
 
     //Methods connected to timer
@@ -132,6 +136,27 @@ private void saveAsFile(TextView sport, TextView timeOfExercise) {
         finish();
     }
     //End of methods connected to timer
+
+    private void saveAsFile(TextView sport, TextView amountOfCalories, TextView time) {
+        try {
+    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+
+ //        Writer outputStreamWriter = new BufferedWriter(new OutputStreamWriter(
+   //                 new FileOutputStream("resultsOfExercises.txt", true), "UTF-8"));
+
+    //        PrintWriter outputStreamWriter = new PrintWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+
+
+           String text = "Sport:  "+ sport.getText().toString() +  "\nBurnt calories: "  + amountOfCalories.getText().toString()  + "\nTime: " + time.getText().toString() + "\n" + "\n";
+            outputStreamWriter.append(text);
+//              outputStreamWriter.write(text);
+                outputStreamWriter.flush();
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
 
 
 }
