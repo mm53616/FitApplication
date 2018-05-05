@@ -6,6 +6,10 @@
           <option name="url" value="https:/github.com/mm53616/FitApplication.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://github.com" />
+          <option name="userName" value="ania.ign@onet.pl" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Ania\Desktop\Terminal Devices and User Interfaces" />
