@@ -94,10 +94,6 @@ if (timeRunning==true)
                 Exercises.gowalk = false;
 
 
-                //    timeTextReplacing = timeTextReplacing + Exercises.TextTimeWalk;
-
-                //     replaceText();
-
 
             } else if (Exercises.gorun == true) {
 
