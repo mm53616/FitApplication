@@ -1,6 +1,7 @@
 package com.example.ania.fitapplication;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,14 +22,15 @@ public class Exercise extends AppCompatActivity {
 
 
 
-//Timer variable
+    //Timer variable
     static TextView timeCounterText;
     private Button timeButton;
     private CountDownTimer countDownTimer;
-    private long timeLeft = TrainAlone.time*60000;
+    public long timeLeft;
     private boolean timeRunning;
 
-//File variable
+
+    //File variable
     private Button saveButton;
     static TextView sportText;
     static TextView caloriesText;
@@ -40,14 +42,9 @@ public class Exercise extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
 
 
-//Labels
-//        sportText.setText(Exercises.a);
 
-//Creating a gif
-        com.example.ania.fitapplication.GifImageView gifImageView = findViewById(R.id.GifImageView);
-        gifImageView.setGifImageResource(R.drawable.walking);
 
- //Creating a timer
+        //Creating a timer
         timeCounterText = findViewById(R.id.timerText);
         timeButton = findViewById(R.id.timerStart);
 
@@ -60,6 +57,7 @@ public class Exercise extends AppCompatActivity {
         });
         updateTimer();
 
+
 //Creating a file
         saveButton = findViewById(R.id.saveButton);
         sportText = findViewById(R.id.textViewOfSport);
@@ -71,32 +69,78 @@ public class Exercise extends AppCompatActivity {
             public void onClick(View view) {
                 if (timeRunning)
                     startStop();
-                saveAsFile(sportText, caloriesText, timeCounterText );
+                saveAsFile(sportText, caloriesText, timeCounterText);
             }
         });
 
-        //Checking which button was clicked
-        if(Exercises.gowalk == true){
-            sportText.setText("Walking");
-            caloriesText.setText(""+Exercises.TextCaloriesWalk);
 
-          /*  if(TrainAlone.CaloriesChecked == true){
-                timeLeft = Exercises.walkTime;
+if (timeRunning==true)
+    stopTimer();
+
+            if (Exercises.gowalk == true) {
+
+                //Creating a gif
+                com.example.ania.fitapplication.GifImageView gifImageView = findViewById(R.id.GifImageView);
+                gifImageView.setGifImageResource(R.drawable.walking);
+
+                sportText.setText("Walking");
+                caloriesText.setText("" + Exercises.TextCaloriesWalk);
+
+                if (TrainAlone.CaloriesChecked == true)
+                    timeLeft = Exercises.walkTime * 60000;
+                else
+                    timeLeft = TrainAlone.time * 60000;
+
+                Exercises.gowalk = false;
+
+
+                //    timeTextReplacing = timeTextReplacing + Exercises.TextTimeWalk;
+
+                //     replaceText();
+
+
+            } else if (Exercises.gorun == true) {
+
+                //Creating a gif
+                com.example.ania.fitapplication.GifImageView gifImageView = findViewById(R.id.GifImageView);
+                gifImageView.setGifImageResource(R.drawable.running);
+
+
+                sportText.setText("Running");
+                caloriesText.setText("" + Exercises.TextCaloriesRun);
+
+                if (TrainAlone.CaloriesChecked == true)
+                    timeLeft = Exercises.runtTime * 60000;
+                else
+                    timeLeft = TrainAlone.time * 60000;
+
+                Exercises.gorun = false;
+                updateTimer();
+
+
+
+            } else if (Exercises.gobike == true) {
+
+                //Creating a gif
+                com.example.ania.fitapplication.GifImageView gifImageView = findViewById(R.id.GifImageView);
+                gifImageView.setGifImageResource(R.drawable.bike);
+
+                sportText.setText("Bike");
+                caloriesText.setText("" + Exercises.TextCaloriesBike);
+
+                if (TrainAlone.CaloriesChecked == true)
+                    timeLeft = Exercises.bikeTime * 60000;
+                else
+                    timeLeft = TrainAlone.time * 60000;
+
+                Exercises.gobike = false;
+                updateTimer();
+
+
             }
-            if(TrainAlone.TimeChecked == true){
-                timeLeft = TrainAlone.time;
-            }*/
-        }
-        else if(Exercises.gorun == true){
-            sportText.setText("Running");
-            caloriesText.setText(""+Exercises.TextCaloriesRun);
-        }
-        else if(Exercises.gobike == true){
-            sportText.setText("Bike");
-            caloriesText.setText(""+Exercises.TextCaloriesBike);
         }
 
-    }
+ //   }
 
 
     //Methods connected to timer
@@ -134,6 +178,7 @@ public class Exercise extends AppCompatActivity {
 
     private void updateTimer() {
 
+
         int minutes = (int) (timeLeft / 60000);
         int seconds = (int) timeLeft % 60000 / 1000;
 
@@ -145,34 +190,37 @@ public class Exercise extends AppCompatActivity {
             timeLeftText += "0";
         timeLeftText += seconds;
 
-        timeCounterText.setText(timeLeftText);
+       timeCounterText.setText(timeLeftText);
+
     }
+    //End of methods connected to timer
+
 
     public void Back(View view) {
+        if (timeRunning == true)
+            stopTimer();
         finish();
         Exercises.gowalk = false;
         Exercises.gorun = false;
         Exercises.gobike = false;
     }
-    //End of methods connected to timer
 
     private void saveAsFile(TextView sport, TextView amountOfCalories, TextView time) {
         try {
-    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
 
- //        Writer outputStreamWriter = new BufferedWriter(new OutputStreamWriter(
-   //                 new FileOutputStream("resultsOfExercises.txt", true), "UTF-8"));
+            //        Writer outputStreamWriter = new BufferedWriter(new OutputStreamWriter(
+            //                 new FileOutputStream("resultsOfExercises.txt", true), "UTF-8"));
 
-    //        PrintWriter outputStreamWriter = new PrintWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+            //        PrintWriter outputStreamWriter = new PrintWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
 
 
-           String text = "Sport:  "+ sport.getText().toString() +  "\nBurnt calories: "  + amountOfCalories.getText().toString()  + "\nTime: " + time.getText().toString() + "\n" + "\n";
+            String text = "Sport:  " + sport.getText().toString() + "\nBurnt calories: " + amountOfCalories.getText().toString() + "\nTime: " + time.getText().toString() + "\n" + "\n";
             outputStreamWriter.append(text);
 //              outputStreamWriter.write(text);
-                outputStreamWriter.flush();
+            outputStreamWriter.flush();
             outputStreamWriter.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }

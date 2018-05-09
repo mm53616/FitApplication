@@ -124,13 +124,6 @@
 
 
                 <Button
-                    android:id="@+id/button_go"
-                    style="@style/ButtonStyle"
-                    android:background="@color/ButtonColor"
-                    android:onClick="Go"
-                    android:text="GO!" />
-
-                <Button
                     android:id="@+id/button"
                     style="@style/ButtonStyle"
                     android:background="@color/ButtonColor"

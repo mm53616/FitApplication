@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 public class Exercises extends AppCompatActivity {
 
-    static int walkTime;
-    int runtTime;
-    int bikeTime;
+    static long walkTime;
+    static long runtTime;
+    static long bikeTime;
     int walkCalories;
     int runCalories;
     int bikeCalories;
@@ -77,11 +77,6 @@ public class Exercises extends AppCompatActivity {
     }
 
 
-
-    public void Go(View view){
-        Intent i = new Intent(this, Exercise.class);
-        startActivity(i);
-    }
 
     public void Back(View view)
     {

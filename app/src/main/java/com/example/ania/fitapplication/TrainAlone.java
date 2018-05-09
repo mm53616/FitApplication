@@ -75,7 +75,7 @@ public class TrainAlone extends AppCompatActivity {
             } catch(NumberFormatException nfe) {
                 System.out.println("Could not parse " + nfe);
             }
-            if(time>200 || time < 10){
+            if(time>200 || time < 1){
                 Toast.makeText(this, " Change the time", Toast.LENGTH_SHORT).show();
             }
             else{
