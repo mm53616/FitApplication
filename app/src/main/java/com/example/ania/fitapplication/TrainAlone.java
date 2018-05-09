@@ -94,7 +94,4 @@ public class TrainAlone extends AppCompatActivity {
         }
     }
 
-    public void chosenActivity(View view) {
-    }
 }
-

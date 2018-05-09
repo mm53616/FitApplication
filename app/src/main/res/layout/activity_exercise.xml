@@ -19,90 +19,90 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewOfSport"
-                style="@style/TextViewStyleExercise"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                android:text="Walking" />
+                <TextView
+                    android:id="@+id/textViewOfSport"
+                    style="@style/TextViewStyleExercise"
 
-            <TextView
-                android:id="@+id/textViewOfCalories"
-                style="@style/TextViewStyleExercise"
-                android:text="120 kcal" />
+                    android:text="Walking" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewOfCalories"
+                    style="@style/TextViewStyleExercise"
+                    android:text="120 kcal" />
+
+            </LinearLayout>
 
 
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="4">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <Button
+                    android:id="@+id/timerStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"/>
+
+
+                <TextView
+                    android:id="@+id/timerText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textSize="50dp"
+                    android:layout_weight="2"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Save" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.ania.fitapplication.GifImageView
+                    android:id="@+id/GifImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    />
+            </RelativeLayout>
+
 
             <Button
-                android:id="@+id/timerStart"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Start"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"/>
-
-
-            <TextView
-                android:id="@+id/timerText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:textSize="50dp"
-                android:layout_weight="2"
-                android:layout_marginTop="10dp"
-                android:gravity="center_horizontal" />
-
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Save" />
-
+                android:id="@+id/button3"
+                android:text="Back"
+                style="@style/ButtonStyle"
+                android:background="@color/ButtonColor"
+                android:onClick="Back"/>
 
         </LinearLayout>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <com.example.ania.fitapplication.GifImageView
-            android:id="@+id/GifImageView"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_margin="20dp"
-            />
-        </RelativeLayout>
-
-
-        <Button
-            android:id="@+id/button3"
-            android:text="Back"
-            style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
-            android:onClick="Back"/>
-
-    </LinearLayout>
 
 
 

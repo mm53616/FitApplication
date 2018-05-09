@@ -4,22 +4,29 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 
 public class Exercises extends AppCompatActivity {
 
     static int walkTime;
-    static int runtTime;
-    static int bikeTime;
-    static int walkCalories;
-    static int runCalories;
-    static int bikeCalories;
-
-//    static String a="hhhhhhhhh";
+    int runtTime;
+    int bikeTime;
+    int walkCalories;
+    int runCalories;
+    int bikeCalories;
 
 
+    static String TextTimeWalk;
+    static String TextTimeRun;
+    static String TextTimeBike;
+    static String TextCaloriesWalk;
+    static String TextCaloriesRun;
+    static String TextCaloriesBike;
+
+    static boolean gowalk = false;
+    static boolean gorun = false;
+    static boolean gobike = false;
 
 
     @Override
@@ -27,64 +34,16 @@ public class Exercises extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercises);
 
-      final TextView WalkTime = (TextView) findViewById(R.id.editText_walk_time);
-      final   TextView WalkCalories = (TextView) findViewById(R.id.editText_walk_calories);
-        final TextView RunTime = (TextView) findViewById(R.id.editText_run_time);
-        final TextView RunCalories = (TextView) findViewById(R.id.editText_run_calories);
-        final TextView BikTime = (TextView) findViewById(R.id.editText_bike_time);
-        final TextView BikeCalories = (TextView) findViewById(R.id.editText_bike_calories);
-         Button walkButton = findViewById(R.id.image_walk);
-          Button runButton = findViewById(R.id.image_run);
-         Button bikeButton =  findViewById(R.id.image_bike);
+        TextView WalkTime = (TextView) findViewById(R.id.editText_walk_time);
+        TextView WalkCalories = (TextView) findViewById(R.id.editText_walk_calories);
+        TextView RunTime = (TextView) findViewById(R.id.editText_run_time);
+        TextView RunCalories = (TextView) findViewById(R.id.editText_run_calories);
+        TextView BikTime = (TextView) findViewById(R.id.editText_bike_time);
+        TextView BikeCalories = (TextView) findViewById(R.id.editText_bike_calories);
 
-
-//Choosing activity
-
-        walkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-        //      choosingWalking( WalkTime, WalkCalories);
-
-           //     Exercise.sportText.setText("Walking");
-       //         Exercise.caloriesText.setText(WalkCalories.getText());
-      //          Exercise.timeCounterText.setText(WalkTime.getText());;
-               Go( view);
-
-            }
-        });
-
-        runButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            //    choosingRunning();
-
-                Go( view);
-
-
-            }
-        });
-
-        bikeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-   //          choosingBike();
-                Go( view);
-
-
-            }
-        });
-
-
-
-
-//Counting calories and time
         if(TrainAlone.CaloriesChecked == true){
 
             calculateTime(TrainAlone.calories);
-
 
             WalkCalories.setText("Calories:  "+TrainAlone.calories + " kcal");
             RunCalories.setText("Calories:  "+TrainAlone.calories + " kcal");
@@ -107,37 +66,15 @@ public class Exercises extends AppCompatActivity {
             RunTime.setText("Time:  "+TrainAlone.time + " min");
             BikTime.setText("Time:  "+TrainAlone.time + " min");
         }
+        // getting final time from TextView
+        TextTimeWalk = WalkTime.getText().toString();
+        TextTimeRun = RunTime.getText().toString();
+        TextTimeBike = BikTime.getText().toString();
+// getting final calories from TextView
+        TextCaloriesWalk = WalkCalories.getText().toString();
+        TextCaloriesRun = RunCalories.getText().toString();
+        TextCaloriesBike = BikeCalories.getText().toString();
     }
-
-
-    //Choosing activity: walking, running, riding a bike
-
-    private void choosingWalking(TextView WalkTime, TextView WalkCalories) {
-
-
-     Exercise.sportText.setText("Walking");
-     Exercise.caloriesText.setText(WalkCalories.getText());
-     Exercise.timeCounterText.setText(WalkTime.getText());
-
-    }
-    /**
-    private void choosingRunning() {
-
-     Exercise.sportText.setText("Running");
-     Exercise.caloriesText.setText(RunCalories.getText());
-     Exercise.timeCounterText.setText(RunTime.getText());
-
-    }
-
-    private void choosingBike() {
-
-     Exercise.sportText.setText("Riding a bike");
-     Exercise.caloriesText.setText(BikeCalories.getText());
-     Exercise.timeCounterText.setText(BikTime.getText());
-
-    }
-
-**/
 
 
 
@@ -163,10 +100,26 @@ public class Exercises extends AppCompatActivity {
         runCalories = (number*735)/60;
         bikeCalories = (number*550)/60;
     }
-
-
-
-
-
-
+    // functions for buttons
+    public void GoWalk(View view){
+        Intent i = new Intent(this, Exercise.class);
+        startActivity(i);
+        gowalk = true;
+        gorun = false;
+        gobike = false;
+    }
+    public void GoRun(View view){
+        Intent i = new Intent(this, Exercise.class);
+        startActivity(i);
+        gorun = true;
+        gowalk = false;
+        gobike = false;
+    }
+    public void GoBike(View view){
+        Intent i = new Intent(this, Exercise.class);
+        startActivity(i);
+        gobike = true;
+        gowalk = false;
+        gorun = false;
+    }
 }

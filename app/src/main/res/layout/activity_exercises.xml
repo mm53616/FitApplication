@@ -32,10 +32,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_walk_time"
-                    android:text="Time: "
-                    android:layout_alignTop="@+id/image_walk"/>
+                    style="@style/TextViewStyleExercises"
+                    android:layout_alignLeft="@+id/editText_walk_calories"
+                    android:layout_alignStart="@+id/editText_walk_calories"
+                    android:layout_alignTop="@+id/image_walk"
+                    android:layout_marginTop="25dp"
+                    android:text="Time: " />
 
                 <TextView
                     style="@style/TextViewStyleExercises"
@@ -48,7 +51,8 @@
                     style="@style/ButtonImageStyle"
                     android:background="@drawable/chod"
                     android:text="walk!"
-                   />
+                    android:onClick="GoWalk"
+                    />
 
 
             </RelativeLayout>
@@ -76,7 +80,8 @@
                     android:id="@+id/image_run"
                     style="@style/ButtonImageStyle"
                     android:background="@drawable/bieg"
-                    android:text="run!"/>
+                    android:text="run!"
+                    android:onClick="GoRun"/>
 
 
 
@@ -105,7 +110,7 @@
                     style="@style/ButtonImageStyle"
                     android:background="@drawable/rower"
                     android:text="Bike"
-                    android:onClick="chosenActivity"/>
+                    android:onClick="GoBike"/>
 
 
 

@@ -75,12 +75,28 @@ public class Exercise extends AppCompatActivity {
             }
         });
 
+        //Checking which button was clicked
+        if(Exercises.gowalk == true){
+            sportText.setText("Walking");
+            caloriesText.setText(""+Exercises.TextCaloriesWalk);
+
+          /*  if(TrainAlone.CaloriesChecked == true){
+                timeLeft = Exercises.walkTime;
+            }
+            if(TrainAlone.TimeChecked == true){
+                timeLeft = TrainAlone.time;
+            }*/
+        }
+        else if(Exercises.gorun == true){
+            sportText.setText("Running");
+            caloriesText.setText(""+Exercises.TextCaloriesRun);
+        }
+        else if(Exercises.gobike == true){
+            sportText.setText("Bike");
+            caloriesText.setText(""+Exercises.TextCaloriesBike);
+        }
+
     }
-
-
-
-
-//Methods connected to timer
 
 
     //Methods connected to timer
@@ -134,6 +150,9 @@ public class Exercise extends AppCompatActivity {
 
     public void Back(View view) {
         finish();
+        Exercises.gowalk = false;
+        Exercises.gorun = false;
+        Exercises.gobike = false;
     }
     //End of methods connected to timer
 
