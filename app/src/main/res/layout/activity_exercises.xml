@@ -38,13 +38,15 @@
                     android:layout_alignStart="@+id/editText_walk_calories"
                     android:layout_alignTop="@+id/image_walk"
                     android:layout_marginTop="25dp"
-                    android:text="Time: " />
+                    android:text="Time: "
+                    android:textSize="18sp" />
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_walk_calories"
+                    style="@style/TextViewStyleExercises"
                     android:layout_below="@+id/editText_walk_time"
-                    android:text="Calories: " />
+                    android:text="Calories: "
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/image_walk"
@@ -63,16 +65,18 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_run_time"
+                    style="@style/TextViewStyleExercises"
                     android:layout_alignTop="@+id/image_run"
-                    android:text="Time: " />
+                    android:text="Time: "
+                    android:textSize="18sp" />
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_run_calories"
+                    style="@style/TextViewStyleExercises"
                     android:layout_below="@+id/editText_run_time"
-                    android:text="Calories: " />
+                    android:text="Calories: "
+                    android:textSize="18sp" />
 
 
                 <Button
@@ -93,16 +97,18 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_bike_time"
+                    style="@style/TextViewStyleExercises"
                     android:layout_alignTop="@+id/image_bike"
-                    android:text="Time: " />
+                    android:text="Time: "
+                    android:textSize="18sp" />
 
                 <TextView
-                    style="@style/TextViewStyleExercises"
                     android:id="@+id/editText_bike_calories"
+                    style="@style/TextViewStyleExercises"
                     android:layout_below="@+id/editText_bike_time"
-                    android:text="Calories: " />
+                    android:text="Calories: "
+                    android:textSize="18sp" />
 
 
                 <Button

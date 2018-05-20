@@ -9,13 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
+
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Writer;
+import java.util.Date;
 
 public class Exercise extends AppCompatActivity {
 
@@ -28,6 +29,10 @@ public class Exercise extends AppCompatActivity {
     private CountDownTimer countDownTimer;
     public long timeLeft;
     private boolean timeRunning;
+    public long result;
+
+    int minutes;
+    int seconds;
 
 
     //File variable
@@ -67,6 +72,7 @@ public class Exercise extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 if (timeRunning)
                     startStop();
                 saveAsFile(sportText, caloriesText, timeCounterText);
@@ -86,12 +92,17 @@ if (timeRunning==true)
                 sportText.setText("Walking");
                 caloriesText.setText("" + Exercises.TextCaloriesWalk);
 
-                if (TrainAlone.CaloriesChecked == true)
+                if (TrainAlone.CaloriesChecked == true) {
                     timeLeft = Exercises.walkTime * 60000;
-                else
+                 result = Exercises.walkTime;
+                }
+                else {
                     timeLeft = TrainAlone.time * 60000;
+                   result = TrainAlone.time;
+                }
 
                 Exercises.gowalk = false;
+                updateTimer();
 
 
 
@@ -105,10 +116,14 @@ if (timeRunning==true)
                 sportText.setText("Running");
                 caloriesText.setText("" + Exercises.TextCaloriesRun);
 
-                if (TrainAlone.CaloriesChecked == true)
+                if (TrainAlone.CaloriesChecked == true) {
                     timeLeft = Exercises.runtTime * 60000;
-                else
+                 result = Exercises.runtTime;
+                }
+                else {
                     timeLeft = TrainAlone.time * 60000;
+                 result = TrainAlone.time;
+                }
 
                 Exercises.gorun = false;
                 updateTimer();
@@ -124,10 +139,14 @@ if (timeRunning==true)
                 sportText.setText("Bike");
                 caloriesText.setText("" + Exercises.TextCaloriesBike);
 
-                if (TrainAlone.CaloriesChecked == true)
+                if (TrainAlone.CaloriesChecked == true) {
                     timeLeft = Exercises.bikeTime * 60000;
-                else
+                  result = Exercises.bikeTime;
+                }
+                else {
                     timeLeft = TrainAlone.time * 60000;
+                  result = TrainAlone.time;
+                }
 
                 Exercises.gobike = false;
                 updateTimer();
@@ -136,7 +155,9 @@ if (timeRunning==true)
             }
         }
 
- //   }
+        public void onBackPressed() {
+
+        }
 
 
     //Methods connected to timer
@@ -175,8 +196,8 @@ if (timeRunning==true)
     private void updateTimer() {
 
 
-        int minutes = (int) (timeLeft / 60000);
-        int seconds = (int) timeLeft % 60000 / 1000;
+        minutes = (int) (timeLeft / 60000);
+        seconds = (int) timeLeft % 60000 / 1000;
 
         String timeLeftText;
 
@@ -187,6 +208,10 @@ if (timeRunning==true)
         timeLeftText += seconds;
 
        timeCounterText.setText(timeLeftText);
+        String p;
+        p = timeCounterText.getText().toString();
+       if (timeLeftText == "0:01")
+           timeCounterText.setText("Well done! \n Save your work!");
 
     }
     //End of methods connected to timer
@@ -201,17 +226,27 @@ if (timeRunning==true)
         Exercises.gobike = false;
     }
 
+
     private void saveAsFile(TextView sport, TextView amountOfCalories, TextView time) {
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE | Context.MODE_APPEND  ));
 
-            //        Writer outputStreamWriter = new BufferedWriter(new OutputStreamWriter(
-            //                 new FileOutputStream("resultsOfExercises.txt", true), "UTF-8"));
+            int finalTime = (int) (result*60 - minutes*60 - seconds);
 
-            //        PrintWriter outputStreamWriter = new PrintWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE));
+            int min = (finalTime / 60);
+            int sec = finalTime % 60;
+//doesn't work
+           String p;
+            p = timeCounterText.getText().toString();
+            if (p == "0:01") {
+                min = (int)result;
+                sec = 0;
+            }
+
+            String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
 
-            String text = "Sport:  " + sport.getText().toString() + "\nBurnt calories: " + amountOfCalories.getText().toString() + "\nTime: " + time.getText().toString() + "\n" + "\n";
+            String text =  mydate + "\n\nSport:  " + sport.getText().toString() + "\n" + amountOfCalories.getText().toString() + "\nTime: " +  min + "min " + sec + "sec" + "\n" + "\n" + "\n";
             outputStreamWriter.append(text);
 //              outputStreamWriter.write(text);
             outputStreamWriter.flush();

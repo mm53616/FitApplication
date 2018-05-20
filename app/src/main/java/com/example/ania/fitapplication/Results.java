@@ -21,9 +21,9 @@ public class Results extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
         results = findViewById(R.id.resultTextView);
-        resultButton = findViewById(R.id.resultsButton);
+        read();
 
-
+/*
         resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +31,7 @@ public class Results extends AppCompatActivity {
               }
         } );
 
-
+*/
         }
 
 

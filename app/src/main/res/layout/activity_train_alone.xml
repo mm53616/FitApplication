@@ -22,9 +22,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:text="Na jakiej podstawie obliczac"
                 style="@style/TextStyle"
-                android:layout_marginLeft="70dp"/>
+                android:layout_marginLeft="70dp" />
 
             <CheckBox
                 android:id="@+id/calories_checkbox"

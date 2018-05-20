@@ -24,19 +24,30 @@ tools:context="com.example.ania.fitapplication.Exercise">
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/resultsButton"
-            style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
-            android:text="Show results" />
+        <TextView
+            android:id="@+id/aboutResultTextView"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="20dp"
+            android:clickable="false"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Your latest results:"
+            android:textAllCaps="true"
+            android:textSize="18sp" />
+
 
         <TextView
             android:id="@+id/resultTextView"
-            android:layout_width="match_parent"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:text="Your latest results:"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
             android:textSize="20sp"
-            android:layout_marginHorizontal="100dp"/>
+            android:background="@drawable/chod"/>
 
 
         <Button
