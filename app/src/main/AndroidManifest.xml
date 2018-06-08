@@ -11,29 +11,32 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:hardwareAccelerated="false">
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TrainAlone"
-            android:screenOrientation="portrait"
-            android:label="Training"/>
-        <activity android:name=".Results"
-            android:screenOrientation="portrait"
-            android:label="Results"/>
-        <activity android:name=".Exercise"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".TrainAlone"
+            android:label="Training"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Results"
+            android:label="Results"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Exercise"
             android:hardwareAccelerated="false"
-            android:label="Exercise!"/>
-        <activity android:name=".Exercises"
-            android:screenOrientation="portrait"
-            android:label="Exercises">
-
-        </activity>
+            android:label="Exercise!"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Exercises"
+            android:label="Exercises"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".TrainTogether"></activity>
     </application>
 
 </manifest>

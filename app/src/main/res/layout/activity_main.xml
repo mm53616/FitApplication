@@ -28,6 +28,12 @@
         android:text="Train alone"
         android:onClick="openTraining"/>
 
+        <Button
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Train together"
+            android:onClick="TrainTogether"/>
+
     <Button
         style="@style/ButtonStyle"
         android:background="@color/ButtonColor"

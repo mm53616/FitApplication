@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.ania.fitapplication.TrainTogether">
+
+<ImageView
+    android:src="@drawable/pobrane"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonInviteFriends"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Invite Friends"
+            android:onClick="sendMail"/>
+
+        <Button
+            android:id="@+id/buttonFindFriends"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Find Friends"
+            android:onClick="showMap"/>
+
+        <Button
+            android:id="@+id/buttonBack"
+            style="@style/ButtonStyle"
+            android:background="@color/ButtonColor"
+            android:text="Back"
+            android:onClick="Back"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+</RelativeLayout>
+
