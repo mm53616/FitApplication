@@ -36,9 +36,11 @@ public class Exercise extends AppCompatActivity {
 
 
     //File variable
-    private Button saveButton;
+    public Button saveButton;
     static TextView sportText;
     static TextView caloriesText;
+
+    int realcalories;
 
 
     @Override
@@ -63,22 +65,24 @@ public class Exercise extends AppCompatActivity {
         updateTimer();
 
 
-//Creating a file
+
         saveButton = findViewById(R.id.saveButton);
         sportText = findViewById(R.id.textViewOfSport);
         caloriesText = findViewById(R.id.textViewOfCalories);
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
+     /*   saveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                if (timeRunning)
+                if (timeRunning) {
                     startStop();
+                }
                 saveAsFile(sportText, caloriesText, timeCounterText);
+
             }
         });
-
+*/
 
 if (timeRunning==true)
     stopTimer();
@@ -216,6 +220,27 @@ if (timeRunning==true)
     }
     //End of methods connected to timer
 
+    public void RealCalories(int realtime){
+
+            if (Exercises.gowalk == false)
+                realcalories = (realtime * 240)/60;
+            if (Exercises.gorun == false)
+                realcalories = (realtime*735)/60;
+            if (Exercises.gobike == false)
+                realcalories = (realtime*550)/60;
+    }
+    //Creating a file
+    public void Save(View view) {
+
+        int finaltime = (int) (result*60 - minutes*60 - seconds)/60;
+        RealCalories(finaltime);
+
+        if (timeRunning) {
+            startStop();
+        }
+        saveAsFile(sportText, realcalories , timeCounterText);
+            Toast.makeText(this, " Results saved", Toast.LENGTH_SHORT).show();
+    }
 
     public void Back(View view) {
         if (timeRunning == true)
@@ -227,7 +252,7 @@ if (timeRunning==true)
     }
 
 
-    private void saveAsFile(TextView sport, TextView amountOfCalories, TextView time) {
+    private void saveAsFile(TextView sport, int calories, TextView time) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("resultsOfExercises.txt", Context.MODE_PRIVATE | Context.MODE_APPEND  ));
 
@@ -246,7 +271,7 @@ if (timeRunning==true)
             String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
 
-            String text =  mydate + "\n\nSport:  " + sport.getText().toString() + "\n" + amountOfCalories.getText().toString() + "\nTime: " +  min + "min " + sec + "sec" + "\n" + "\n" + "\n";
+            String text =  mydate + "\n\nSport:  " + sport.getText().toString() + "\n" + "Calories:  "+realcalories + " kcal" + "\nTime: " +  min + "min " + sec + "sec" + "\n" + "\n" + "\n";
             outputStreamWriter.append(text);
 //              outputStreamWriter.write(text);
             outputStreamWriter.flush();
@@ -255,6 +280,8 @@ if (timeRunning==true)
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
+
+
 
 
 }

@@ -12,7 +12,7 @@ tools:context="com.example.ania.fitapplication.Exercise">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleType="centerCrop"
-    android:src="@drawable/pobrane" />
+    android:src="@drawable/back2" />
 
 
 <ScrollView
@@ -26,13 +26,9 @@ tools:context="com.example.ania.fitapplication.Exercise">
 
         <TextView
             android:id="@+id/aboutResultTextView"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginTop="20dp"
+            style="@style/TextStyle"
+            android:layout_gravity="center"
             android:clickable="false"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
             android:text="Your latest results:"
             android:textAllCaps="true"
             android:textSize="18sp" />
@@ -44,21 +40,21 @@ tools:context="com.example.ania.fitapplication.Exercise">
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="80dp"
             android:layout_marginTop="20dp"
-            android:paddingTop="10dp"
+            android:background="@color/Results"
             android:paddingLeft="10dp"
-            android:textSize="20sp"
-            android:background="@drawable/chod"/>
+            android:paddingTop="10dp"
+            android:textSize="20sp" />
 
 
         <Button
             android:id="@+id/button2"
             style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
-            android:text="Back"
-            android:onClick="Back"/>
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_border"
+            android:onClick="Back"
+            android:text="Back" />
 
     </LinearLayout>
-
 
 
 </ScrollView>

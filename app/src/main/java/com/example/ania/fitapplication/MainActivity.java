@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {   ////#607D8B
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

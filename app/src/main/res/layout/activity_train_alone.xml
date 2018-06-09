@@ -7,7 +7,7 @@
     tools:context="com.example.ania.fitapplication.TrainAlone">
 
     <ImageView
-        android:src="@drawable/pobrane"
+        android:src="@drawable/back2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
@@ -23,7 +23,9 @@
 
             <TextView
                 style="@style/TextStyle"
-                android:layout_marginLeft="70dp" />
+                android:text="You can enter the number of calories you want to burn OR how much time you have to do the training"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
 
             <CheckBox
                 android:id="@+id/calories_checkbox"
@@ -63,16 +65,16 @@
 
             <Button
                 style="@style/ButtonStyle"
-                android:background="@color/ButtonColor"
+                android:background="@drawable/button_border"
                 android:layout_margin="22dp"
                 android:text="Ok"
                 android:onClick="Ok"/>
 
             <Button
                 style="@style/ButtonStyle"
-                android:background="@color/ButtonColor"
-                android:text="@string/back"
-                android:onClick="Back"/>
+                android:background="@drawable/button_border"
+                android:onClick="Back"
+                android:text="@string/back" />
 
         </LinearLayout>
     </ScrollView>

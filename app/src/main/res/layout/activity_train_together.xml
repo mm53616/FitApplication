@@ -6,7 +6,7 @@ android:layout_height="match_parent"
 tools:context="com.example.ania.fitapplication.TrainTogether">
 
 <ImageView
-    android:src="@drawable/pobrane"
+    android:src="@drawable/back2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleType="centerCrop"/>
@@ -18,27 +18,27 @@ tools:context="com.example.ania.fitapplication.TrainTogether">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/buttonInviteFriends"
             style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
+            android:background="@drawable/button_border"
             android:text="Invite Friends"
             android:onClick="sendMail"/>
 
         <Button
             android:id="@+id/buttonFindFriends"
             style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
+            android:background="@drawable/button_border"
             android:text="Find Friends"
             android:onClick="showMap"/>
 
         <Button
             android:id="@+id/buttonBack"
             style="@style/ButtonStyle"
-            android:background="@color/ButtonColor"
+            android:background="@drawable/button_border"
             android:text="Back"
             android:onClick="Back"/>
 

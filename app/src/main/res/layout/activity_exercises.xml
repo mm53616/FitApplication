@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/pobrane" />
+        android:src="@drawable/back2" />
 
 
     <ScrollView
@@ -51,7 +51,7 @@
                 <Button
                     android:id="@+id/image_walk"
                     style="@style/ButtonImageStyle"
-                    android:background="@drawable/chod"
+                    android:background="@drawable/walk"
                     android:text="walk!"
                     android:onClick="GoWalk"
                     />
@@ -83,7 +83,7 @@
 
                     android:id="@+id/image_run"
                     style="@style/ButtonImageStyle"
-                    android:background="@drawable/bieg"
+                    android:background="@drawable/run"
                     android:text="run!"
                     android:onClick="GoRun"/>
 
@@ -114,8 +114,8 @@
                 <Button
                     android:id="@+id/image_bike"
                     style="@style/ButtonImageStyle"
-                    android:background="@drawable/rower"
-                    android:text="Bike"
+                    android:background="@drawable/bike1"
+                    android:text="Bike!"
                     android:onClick="GoBike"/>
 
 
@@ -132,7 +132,7 @@
                 <Button
                     android:id="@+id/button"
                     style="@style/ButtonStyle"
-                    android:background="@color/ButtonColor"
+                    android:background="@drawable/button_border"
                     android:text="Back"
                     android:onClick="Back"/>
 

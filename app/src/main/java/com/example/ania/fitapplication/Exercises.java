@@ -66,7 +66,8 @@ public class Exercises extends AppCompatActivity {
             RunTime.setText("Time:  "+TrainAlone.time + " min");
             BikTime.setText("Time:  "+TrainAlone.time + " min");
         }
-        // getting final time from TextView
+
+//getting final time from TextView
         TextTimeWalk = WalkTime.getText().toString();
         TextTimeRun = RunTime.getText().toString();
         TextTimeBike = BikTime.getText().toString();
@@ -118,3 +119,4 @@ public class Exercises extends AppCompatActivity {
         gorun = false;
     }
 }
+//b3ffff niebieski

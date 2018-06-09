@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/pobrane" />
+        android:src="@drawable/back2" />
 
 
     <ScrollView
@@ -33,7 +33,6 @@
                 <TextView
                     android:id="@+id/textViewOfSport"
                     style="@style/TextViewStyleExercise"
-
                     android:text="Walking" />
 
                 <TextView
@@ -75,6 +74,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="Save"
                     android:text="Save" />
 
 
@@ -99,7 +99,7 @@
                 android:id="@+id/button3"
                 android:text="Back"
                 style="@style/ButtonStyle"
-                android:background="@color/ButtonColor"
+                android:background="@drawable/button_border"
                 android:onClick="Back"/>
 
         </LinearLayout>
