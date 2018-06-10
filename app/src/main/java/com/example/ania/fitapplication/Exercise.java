@@ -70,19 +70,6 @@ public class Exercise extends AppCompatActivity {
         sportText = findViewById(R.id.textViewOfSport);
         caloriesText = findViewById(R.id.textViewOfCalories);
 
-     /*   saveButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                if (timeRunning) {
-                    startStop();
-                }
-                saveAsFile(sportText, caloriesText, timeCounterText);
-
-            }
-        });
-*/
 
 if (timeRunning==true)
     stopTimer();
@@ -220,6 +207,7 @@ if (timeRunning==true)
     }
     //End of methods connected to timer
 
+    // calculating burnt calories
     public void RealCalories(int realtime){
 
             if (Exercises.gowalk == false)
@@ -260,7 +248,7 @@ if (timeRunning==true)
 
             int min = (finalTime / 60);
             int sec = finalTime % 60;
-//doesn't work
+
            String p;
             p = timeCounterText.getText().toString();
             if (p == "0:01") {
@@ -280,8 +268,6 @@ if (timeRunning==true)
             Log.e("Exception", "File write failed: " + e.toString());
         }
     }
-
-
 
 
 }

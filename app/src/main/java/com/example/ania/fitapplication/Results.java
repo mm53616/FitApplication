@@ -23,15 +23,6 @@ public class Results extends AppCompatActivity {
         results = findViewById(R.id.resultTextView);
         read();
 
-/*
-        resultButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                read();
-              }
-        } );
-
-*/
         }
 
 

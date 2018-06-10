@@ -119,4 +119,3 @@ public class Exercises extends AppCompatActivity {
         gorun = false;
     }
 }
-//b3ffff niebieski

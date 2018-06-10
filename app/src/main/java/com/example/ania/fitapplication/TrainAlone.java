@@ -50,6 +50,7 @@ public class TrainAlone extends AppCompatActivity {
         }
     }
 
+    // saving time or calories from EditText
     public void Ok(View v){
 
         EditText numberText = (EditText) findViewById(R.id.number_text);
