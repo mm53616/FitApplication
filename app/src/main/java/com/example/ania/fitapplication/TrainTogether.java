@@ -36,7 +36,7 @@ public class TrainTogether extends AppCompatActivity {
     public void showMap(View view) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("geo:52.13, 21"));
+        intent.setData(Uri.parse("geo:46.0449, 14.489"));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
